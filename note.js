@@ -1,13 +1,18 @@
-const onFormSubmit = () => {
-    const formData = readFormData();
+let formData = [];
+
+const getNotes = () => {
+  const note = document.querySelector('#text').textContent;
+  formData.push({ note });
 }
 
-const readFormData = () => {
-    const formData = {};
-    formData["text"] = document.getElementById("text").nodeValue;
+const form = document.querySelector(".form");
+let notes = document.querySelector(".notes");
 
+form.onsubmit = (e) => {
+  console.log(e);
+  e.preventDefault();
+
+  getNotes();
+  console.log(formData);
 }
 
-const insertNewRecods = (data) => {
-    
-}
